@@ -105,9 +105,6 @@ cmds.forEach(function (cmd) {
         cmd = cmd.replace(cwd[0], '');
     }
 
-    if (process.platform != 'win32') {
-      cmd = "exec "+cmd;
-    }
     var child = spawn(sh,[shFlag,cmd], {
         cwd: (cwd && cwd[1]) || process.cwd(),
         env: process.env,
